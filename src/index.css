@@ -1,0 +1,117 @@
+@import 'tailwindcss';
+
+/* 
+themes: 
+ Light Steel
+ Vivid Nightfall
+ Purple Cascade
+ Fresh Greens
+ Pink Ombre
+
+*/
+
+
+
+/* CSS faylingizda: */
+:root, [data-theme='light-steel'] {
+  --bg-main: #212529;
+  --bg-secondary: #343A40;
+  --text-main: #ADB5BD;
+  --text-muted: #6c757d;
+  --accent: #DEE2E6;
+}
+
+@theme {
+  /* Ranglarni Tailwind klasslariga bog'laymiz */
+  --color-theme-bg: var(--bg-main);
+  --color-theme-secondary: var(--bg-secondary);
+  --color-theme-text: var(--text-main);
+  --color-theme-muted: var(--text-muted);
+  --color-theme-accent: var(--accent);
+  --inset-shadow-md: inset 0 0 2px 2px var(--color-theme-accent);
+}
+
+[data-theme='vivid-nightfall'] {
+  --bg-main: #10002b;
+  --bg-secondary: #240046;
+  --text-main: #e0aaff;
+  --text-muted: #c77dff;
+  --accent: #9d4edd;
+}
+[data-theme='purple-cascade'] {
+  --bg-main: #120024;
+  --bg-secondary: #220038;
+  --text-main: #f5f3ff;
+  --text-muted: #f472b6;
+  --accent: #ec4899;
+}
+
+[data-theme='fresh-greens'] {
+  --bg-main: #081c15;
+  --bg-secondary: #1b4332;
+  --text-main: #d8f3dc;
+  --text-muted: #95d5b2;
+  --accent: #52b788;
+}
+
+[data-theme='pink-ombre'] {
+  --bg-main: #fff5f6;
+  --bg-secondary: #ffe3e8;
+  --text-main: #4a051c;
+  --text-muted: #9d4c67;
+  --accent: #ff477e;
+}
+
+body{
+   box-sizing: border-box;
+   user-select: none;
+}
+
+
+button{
+   cursor: pointer;
+}
+
+.bold-font {
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: bold;
+}
+
+.cutive-mono {
+  font-family: 'Cutive Mono', monospace;
+}
+
+/* --- Custom Gradient Scrollbar --- */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--accent) 0%,
+    var(--bg-secondary) 100%
+  );
+  border-radius: 100vh;
+  border: 2px solid var(--bg-main);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--text-main) 0%,
+    var(--accent) 100%
+  );
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--bg-main);
+}
