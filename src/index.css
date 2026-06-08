@@ -125,6 +125,9 @@ button { cursor: pointer; }
   background-size: 40px 40px, 40px 40px, 40px 40px;
   /* dots 0,0 da emas — kesishuv nuqtaga (20px,20px) siljitilgan */
   background-position: 0 0, 0 0, 20px 20px;
+}
+
+[data-perf='high'] .aurora-grid {
   animation: aurora-grid-drift 14s linear infinite, aurora-shimmer 5s ease-in-out infinite;
 }
 
@@ -139,6 +142,9 @@ button { cursor: pointer; }
     color-mix(in srgb, var(--accent) 14%, transparent) 40%,
     transparent 70%
   );
+}
+
+[data-perf='high'] .aurora-orb-1 {
   animation: orb-1-move 18s ease-in-out infinite;
   filter: blur(40px);
 }
@@ -154,6 +160,9 @@ button { cursor: pointer; }
     color-mix(in srgb, var(--accent) 10%, transparent) 40%,
     transparent 70%
   );
+}
+
+[data-perf='high'] .aurora-orb-2 {
   animation: orb-2-move 22s ease-in-out infinite;
   filter: blur(35px);
 }
@@ -168,6 +177,9 @@ button { cursor: pointer; }
     color-mix(in srgb, var(--accent) 24%, transparent) 0%,
     transparent 65%
   );
+}
+
+[data-perf='high'] .aurora-orb-3 {
   animation: orb-3-move 14s ease-in-out infinite;
   filter: blur(30px);
 }
@@ -182,9 +194,21 @@ button { cursor: pointer; }
     color-mix(in srgb, var(--accent) 20%, transparent) 0%,
     transparent 65%
   );
+}
+
+[data-perf='high'] .aurora-orb-4 {
   animation: orb-4-move 16s ease-in-out infinite;
   filter: blur(28px);
 }
+
+/* GPU yuklamasini kamaytirish uchun backdrop-blur'ni ham nazorat qilamiz */
+.backdrop-blur-md, .backdrop-blur-sm, .titlebar {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+[data-perf='high'] .backdrop-blur-md { backdrop-filter: blur(12px) !important; }
+[data-perf='high'] .backdrop-blur-sm { backdrop-filter: blur(4px) !important; }
+[data-perf='high'] .titlebar { backdrop-filter: blur(10px) !important; }
 
 /* Light Steel — accent oqish bo'lgani uchun maxsus ranglar */
 [data-theme='light-steel'] .aurora-orb-1 {

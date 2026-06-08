@@ -25,7 +25,7 @@ const Sidebar = ({ mobile = false }) => {
         key={item.path}
         to={item.path}
         title={item.label}
-        className={`relative p-3 rounded-full transition-colors duration-300 z-20`}
+        className={`relative ${mobile ? 'p-2.5' : 'p-3'} rounded-full transition-colors duration-300 z-20`}
       >
         {isActive && (
           <Motion.div
@@ -45,12 +45,12 @@ const Sidebar = ({ mobile = false }) => {
 
   if (mobile) {
     return (
-      <div className="flex flex-row items-center gap-1 bg-theme-secondary/85 backdrop-blur-md border border-theme-accent/20 rounded-full px-2 py-1 shadow-xl">
-        <nav className="flex flex-row gap-1 relative">{navItems}</nav>
-        <div className="ml-2 pl-2 border-l border-theme-accent/20">
+      <div className="flex flex-row items-center gap-0.5 bg-theme-secondary/85 backdrop-blur-md border border-theme-accent/20 rounded-full px-1.5 py-1 shadow-xl w-fit mx-auto">
+        <nav className="flex flex-row gap-0.5 relative">{navItems}</nav>
+        <div className="ml-1.5 pl-1.5 border-l border-theme-accent/20">
           <ThemePicker mobile />
         </div>
-        <div className="ml-1 pl-1">
+        <div className="ml-0.5 pl-0.5">
           <LanguagePicker mobile />
         </div>
       </div>
@@ -62,10 +62,10 @@ const Sidebar = ({ mobile = false }) => {
       <div className="mb-5">
         <ThemePicker />
       </div>
-      <div className="mb-8">
+      <div className="pb-3 border-b border-theme-accent/20">
         <LanguagePicker />
       </div>
-      <nav className="flex flex-col gap-6 relative">{navItems}</nav>
+      <nav className="flex flex-col gap-6 relative mt-3">{navItems}</nav>
     </div>
   );
 };

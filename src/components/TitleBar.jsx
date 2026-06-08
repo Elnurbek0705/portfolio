@@ -195,7 +195,7 @@ const TitleBar = () => {
       <div id="custom-titlebar">
         <div id="tb-drag">
           <span id="tb-dot" />
-          <span id="tb-title">Portfolio</span>
+          <span id="tb-title">Portfolio - A.Elnurbek</span>
         </div>
 
         <div id="tb-controls">

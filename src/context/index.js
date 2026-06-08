@@ -12,6 +12,10 @@ export const translations = {
       restore: "Oyna o‘lchamini tiklash",
       close: "Yopish"
     },
+    perf: {
+      high: "Yuqori unumdorlik",
+      low: "Tejamkor rejim"
+    },
     home: {
       greeting: "Salom, men",
       im: "Men",
@@ -54,6 +58,10 @@ export const translations = {
       restore: "Restore",
       close: "Close"
     },
+    perf: {
+      high: "High Performance",
+      low: "Eco Mode"
+    },
     home: {
       greeting: "Hi, I'm",
       im: "I am a",
@@ -95,6 +103,10 @@ export const translations = {
       maximize: "Развернуть",
       restore: "Восстановить",
       close: "Закрыть"
+    },
+    perf: {
+      high: "Высокая производительность",
+      low: "Экономный режим"
     },
     home: {
       greeting: "Привет, я",
