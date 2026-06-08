@@ -1,56 +1,16 @@
 import React, { useContext } from 'react';
 import { motion as Motion } from 'framer-motion';
-import { ExternalLink, GitFork } from 'lucide-react';
+import { ExternalLink, GitFork, Music } from 'lucide-react';
 import { LanguageContext } from '../context/LanguageContext';
 
 const projects = [
   {
-    id: 'ecommerce',
-    tags: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
-    gradient: 'from-blue-500/25 via-cyan-500/10 to-theme-secondary',
-    emoji: '🛒',
-    link: '#',
-    github: '#',
-  },
-  {
-    id: 'task',
-    tags: ['Vue.js', 'Firebase', 'Tailwind'],
+    id: 'player',
+    tags: ['React', 'Tauri', 'Tailwind', 'yt-dlp'],
     gradient: 'from-purple-500/25 via-pink-500/10 to-theme-secondary',
-    emoji: '✅',
-    link: '#',
-    github: '#',
-  },
-  {
-    id: 'weather',
-    tags: ['React', 'Chart.js', 'REST API'],
-    gradient: 'from-orange-500/25 via-yellow-500/10 to-theme-secondary',
-    emoji: '🌤️',
-    link: '#',
-    github: '#',
-  },
-  {
-    id: 'social',
-    tags: ['React', 'GraphQL', 'PostgreSQL'],
-    gradient: 'from-emerald-500/25 via-teal-500/10 to-theme-secondary',
-    emoji: '💬',
-    link: '#',
-    github: '#',
-  },
-  {
-    id: 'blog',
-    tags: ['Next.js', 'Prisma', 'TypeScript'],
-    gradient: 'from-red-500/25 via-orange-500/10 to-theme-secondary',
-    emoji: '✍️',
-    link: '#',
-    github: '#',
-  },
-  {
-    id: 'portfolio',
-    tags: ['React', 'Framer Motion', 'Tailwind'],
-    gradient: 'from-violet-500/25 via-purple-500/10 to-theme-secondary',
-    emoji: '🎨',
-    link: '#',
-    github: '#',
+    emoji: <Music className="w-15 h-15 " />,
+    link: 'https://sonara-music-player-website.vercel.app/',
+    github: 'https://github.com/Elnurbek0705/Sonara-Music-Player',
   },
 ];
 
@@ -125,13 +85,13 @@ const Portfolio = () => {
 
               {/* Havolalar */}
               <div className="flex gap-4">
-                <a
+                <a target="_blank" rel="noopener noreferrer"
                   href={project.link}
                   className="flex items-center gap-1.5 text-xs text-theme-accent hover:text-theme-text transition-colors font-medium"
                 >
                   <ExternalLink className="w-3.5 h-3.5" /> {t('portfolio.demo')}
                 </a>
-                <a
+                <a target="_blank" rel="noopener noreferrer"
                   href={project.github}
                   className="flex items-center gap-1.5 text-xs text-theme-muted hover:text-theme-text transition-colors font-medium"
                 >
