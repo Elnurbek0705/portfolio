@@ -6,6 +6,12 @@ export const translations = {
       skills: "Ko'nikmalar - Men",
     },
     nav: { home: "Asosiy", portfolio: "Portfolio", skills: "Ko'nikmalar" },
+    titleBar: {
+      minimize: "Oynani yig‘ish",
+      maximize: "To‘liq ekranga yoyish",
+      restore: "Oyna o‘lchamini tiklash",
+      close: "Yopish"
+    },
     home: {
       greeting: "Salom, men",
       im: "Men",
@@ -42,6 +48,12 @@ export const translations = {
       skills: "Skills - Me",
     },
     nav: { home: "Home", portfolio: "Portfolio", skills: "Skills" },
+    titleBar: {
+      minimize: "Minimize",
+      maximize: "Maximize",
+      restore: "Restore",
+      close: "Close"
+    },
     home: {
       greeting: "Hi, I'm",
       im: "I am a",
@@ -78,6 +90,12 @@ export const translations = {
       skills: "Навыки - Я",
     },
     nav: { home: "Главная", portfolio: "Портфолио", skills: "Навыки" },
+    titleBar: {
+      minimize: "Свернуть",
+      maximize: "Развернуть",
+      restore: "Восстановить",
+      close: "Закрыть"
+    },
     home: {
       greeting: "Привет, я",
       im: "Я",

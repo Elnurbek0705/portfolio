@@ -1,0 +1,211 @@
+@import 'tailwindcss';
+
+:root, [data-theme='light-steel'] {
+  --bg-main: #212529;
+  --bg-secondary: #343A40;
+  --text-main: #ADB5BD;
+  --text-muted: #6c757d;
+  --accent: #DEE2E6;
+}
+
+@theme {
+  --color-theme-bg: var(--bg-main);
+  --color-theme-secondary: var(--bg-secondary);
+  --color-theme-text: var(--text-main);
+  --color-theme-muted: var(--text-muted);
+  --color-theme-accent: var(--accent);
+  --inset-shadow-md: inset 0 0 2px 2px var(--color-theme-accent);
+}
+
+[data-theme='vivid-nightfall'] {
+  --bg-main: #10002b;
+  --bg-secondary: #240046;
+  --text-main: #e0aaff;
+  --text-muted: #c77dff;
+  --accent: #9d4edd;
+}
+[data-theme='purple-cascade'] {
+  --bg-main: #120024;
+  --bg-secondary: #220038;
+  --text-main: #f5f3ff;
+  --text-muted: #f472b6;
+  --accent: #ec4899;
+}
+[data-theme='fresh-greens'] {
+  --bg-main: #081c15;
+  --bg-secondary: #1b4332;
+  --text-main: #d8f3dc;
+  --text-muted: #95d5b2;
+  --accent: #52b788;
+}
+[data-theme='pink-ombre'] {
+  --bg-main: #fff5f6;
+  --bg-secondary: #ffe3e8;
+  --text-main: #4a051c;
+  --text-muted: #9d4c67;
+  --accent: #ff477e;
+}
+
+body {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+button { cursor: pointer; }
+
+.bold-font {
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: bold;
+}
+.cutive-mono {
+  font-family: 'Cutive Mono', monospace;
+}
+
+/* ============================================
+   NEON AURORA — GLOBAL BACKGROUND EFFECTS
+   Barcha ranglar var(--accent) dan olinadi
+   ============================================ */
+
+/* Asosiy orb animatsiyalari */
+@keyframes aurora-float-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(30px, -40px) scale(1.08); }
+  66%       { transform: translate(-20px, 20px) scale(0.95); }
+}
+@keyframes aurora-float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(-35px, 30px) scale(1.05); }
+  66%       { transform: translate(25px, -25px) scale(1.1); }
+}
+@keyframes aurora-float-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(20px, 40px) scale(0.9); }
+}
+@keyframes aurora-grid-drift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 24px 24px; }
+}
+@keyframes aurora-shimmer {
+  0%, 100% { opacity: 0.04; }
+  50%       { opacity: 0.09; }
+}
+
+/* Aurora wrapper — App.jsx ichida ishlatiladi */
+.aurora-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Grid lines */
+.aurora-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--accent) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 8%, transparent) 1px, transparent 1px);
+  background-size: 24px 24px;
+  animation: aurora-grid-drift 8s linear infinite, aurora-shimmer 4s ease-in-out infinite;
+}
+
+/* Orb 1 — katta, chap yuqori */
+.aurora-orb-1 {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  top: -160px;
+  left: -100px;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--accent) 28%, transparent) 0%,
+    color-mix(in srgb, var(--accent) 10%, transparent) 40%,
+    transparent 70%
+  );
+  animation: aurora-float-1 12s ease-in-out infinite;
+  filter: blur(2px);
+}
+
+/* Orb 2 — o'rta, o'ng pastki */
+.aurora-orb-2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  bottom: -100px;
+  right: -80px;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--accent) 22%, transparent) 0%,
+    color-mix(in srgb, var(--accent) 8%, transparent) 40%,
+    transparent 70%
+  );
+  animation: aurora-float-2 15s ease-in-out infinite;
+  filter: blur(2px);
+}
+
+/* Orb 3 — kichik, o'rta-o'ng */
+.aurora-orb-3 {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  top: 30%;
+  right: 15%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--accent) 16%, transparent) 0%,
+    transparent 65%
+  );
+  animation: aurora-float-3 9s ease-in-out infinite;
+  filter: blur(1px);
+}
+
+/* Orb 4 — mayda, pastki chap */
+.aurora-orb-4 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  bottom: 20%;
+  left: 10%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--accent) 12%, transparent) 0%,
+    transparent 65%
+  );
+  animation: aurora-float-1 11s ease-in-out infinite reverse;
+  filter: blur(1px);
+}
+
+/* Pink Ombre (light theme) uchun orb opacity pastroq */
+[data-theme='pink-ombre'] .aurora-orb-1 { opacity: 0.5; }
+[data-theme='pink-ombre'] .aurora-orb-2 { opacity: 0.4; }
+[data-theme='pink-ombre'] .aurora-orb-3 { opacity: 0.35; }
+[data-theme='pink-ombre'] .aurora-orb-4 { opacity: 0.3; }
+[data-theme='pink-ombre'] .aurora-grid  { opacity: 0.5; }
+
+/* Light Steel uchun ham biroz kamaytirish */
+[data-theme='light-steel'] .aurora-orb-1 { opacity: 0.6; }
+[data-theme='light-steel'] .aurora-orb-2 { opacity: 0.5; }
+
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+html, body { overflow: hidden; height: 100%; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-main); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent) 0%, var(--bg-secondary) 100%);
+  border-radius: 100vh;
+  border: 2px solid var(--bg-main);
+  transition: all 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--text-main) 0%, var(--accent) 100%);
+}
+* { scrollbar-width: thin; scrollbar-color: var(--accent) var(--bg-main); }

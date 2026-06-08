@@ -1,18 +1,5 @@
 @import 'tailwindcss';
 
-/* 
-themes: 
- Light Steel
- Vivid Nightfall
- Purple Cascade
- Fresh Greens
- Pink Ombre
-
-*/
-
-
-
-/* CSS faylingizda: */
 :root, [data-theme='light-steel'] {
   --bg-main: #212529;
   --bg-secondary: #343A40;
@@ -22,7 +9,6 @@ themes:
 }
 
 @theme {
-  /* Ranglarni Tailwind klasslariga bog'laymiz */
   --color-theme-bg: var(--bg-main);
   --color-theme-secondary: var(--bg-secondary);
   --color-theme-text: var(--text-main);
@@ -45,7 +31,6 @@ themes:
   --text-muted: #f472b6;
   --accent: #ec4899;
 }
-
 [data-theme='fresh-greens'] {
   --bg-main: #081c15;
   --bg-secondary: #1b4332;
@@ -53,7 +38,6 @@ themes:
   --text-muted: #95d5b2;
   --accent: #52b788;
 }
-
 [data-theme='pink-ombre'] {
   --bg-main: #fff5f6;
   --bg-secondary: #ffe3e8;
@@ -62,56 +46,206 @@ themes:
   --accent: #ff477e;
 }
 
-body{
-   box-sizing: border-box;
-   user-select: none;
-}
-
-
-button{
-   cursor: pointer;
-}
+body { box-sizing: border-box; user-select: none; }
+button { cursor: pointer; }
 
 .bold-font {
   font-family: 'IBM Plex Serif', serif;
   font-weight: bold;
 }
+.cutive-mono { font-family: 'Cutive Mono', monospace; }
 
-.cutive-mono {
-  font-family: 'Cutive Mono', monospace;
+/* ================================================
+   NEON AURORA BACKGROUND
+   ================================================ */
+
+/* Har orb uchun alohida animatsiya — smooth loop, birdan o'tish yo'q */
+@keyframes orb-1-move {
+  0%   { transform: translate(0px,   0px)  scale(1);    }
+  20%  { transform: translate(60px, -80px) scale(1.1);  }
+  45%  { transform: translate(120px, 40px) scale(0.92); }
+  70%  { transform: translate(-40px, 90px) scale(1.06); }
+  100% { transform: translate(0px,   0px)  scale(1);    }
+}
+@keyframes orb-2-move {
+  0%   { transform: translate(0px,    0px)   scale(1);    }
+  25%  { transform: translate(-90px,  60px)  scale(1.08); }
+  55%  { transform: translate(50px,  -100px) scale(0.94); }
+  80%  { transform: translate(80px,   40px)  scale(1.05); }
+  100% { transform: translate(0px,    0px)   scale(1);    }
+}
+@keyframes orb-3-move {
+  0%   { transform: translate(0px,   0px)  scale(1);    }
+  30%  { transform: translate(-60px, 80px) scale(0.9);  }
+  65%  { transform: translate(70px, -60px) scale(1.12); }
+  100% { transform: translate(0px,   0px)  scale(1);    }
+}
+@keyframes orb-4-move {
+  0%   { transform: translate(0px,  0px)   scale(1);   }
+  35%  { transform: translate(80px, -70px) scale(1.1); }
+  70%  { transform: translate(-50px, 50px) scale(0.9); }
+  100% { transform: translate(0px,  0px)   scale(1);   }
 }
 
-/* --- Custom Gradient Scrollbar --- */
-
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+@keyframes aurora-shimmer {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 0.7; }
 }
 
-::-webkit-scrollbar-track {
-  background: var(--bg-main);
+@keyframes aurora-grid-drift {
+  0% { 
+    /* Boshlang'ich holat: dots (nuqtalar) chiziqlar kesishmasida (20px, 20px offset bilan) */
+    background-position: 0 0, 0 0, 20px 20px; 
+  }
+  100% { 
+    /* Hamma qatlamni roppa-rosa bitta to'liq qadamga (40px) suramiz */
+    /* Chiziqlar: 0 + 40 = 40px. Dots: 20 + 40 = 60px. */
+    background-position: 40px 40px, 40px 40px, 60px 60px; 
+  }
 }
 
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    180deg,
-    var(--accent) 0%,
-    var(--bg-secondary) 100%
+/* aurora-bg */
+.aurora-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Grid — dots background-position offset bilan to'g'ri joylashadi */
+.aurora-grid {
+  position: absolute;
+  inset: 0;
+  /* Chiziqlar + kesishuv nuqtalar */
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--accent) 20%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 20%, transparent) 1px, transparent 1px),
+    radial-gradient(circle, color-mix(in srgb, var(--accent) 40%, transparent) 1.5px, transparent 1.5px);
+  background-size: 40px 40px, 40px 40px, 40px 40px;
+  /* dots 0,0 da emas — kesishuv nuqtaga (20px,20px) siljitilgan */
+  background-position: 0 0, 0 0, 20px 20px;
+  animation: aurora-grid-drift 14s linear infinite, aurora-shimmer 5s ease-in-out infinite;
+}
+
+.aurora-orb-1 {
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  top: -200px; left: -150px;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--accent) 38%, transparent) 0%,
+    color-mix(in srgb, var(--accent) 14%, transparent) 40%,
+    transparent 70%
   );
+  animation: orb-1-move 18s ease-in-out infinite;
+  filter: blur(40px);
+}
+
+.aurora-orb-2 {
+  position: absolute;
+  width: 480px; height: 480px;
+  border-radius: 50%;
+  bottom: -140px; right: -100px;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--accent) 30%, transparent) 0%,
+    color-mix(in srgb, var(--accent) 10%, transparent) 40%,
+    transparent 70%
+  );
+  animation: orb-2-move 22s ease-in-out infinite;
+  filter: blur(35px);
+}
+
+.aurora-orb-3 {
+  position: absolute;
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  top: 20%; right: 8%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--accent) 24%, transparent) 0%,
+    transparent 65%
+  );
+  animation: orb-3-move 14s ease-in-out infinite;
+  filter: blur(30px);
+}
+
+.aurora-orb-4 {
+  position: absolute;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  bottom: 15%; left: 5%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--accent) 20%, transparent) 0%,
+    transparent 65%
+  );
+  animation: orb-4-move 16s ease-in-out infinite;
+  filter: blur(28px);
+}
+
+/* Light Steel — accent oqish bo'lgani uchun maxsus ranglar */
+[data-theme='light-steel'] .aurora-orb-1 {
+  background: radial-gradient(
+    circle,
+    rgba(150, 160, 175, 0.45) 0%,
+    rgba(120, 130, 145, 0.18) 40%,
+    transparent 70%
+  );
+}
+[data-theme='light-steel'] .aurora-orb-2 {
+  background: radial-gradient(
+    circle,
+    rgba(130, 145, 165, 0.35) 0%,
+    rgba(100, 115, 135, 0.14) 40%,
+    transparent 70%
+  );
+}
+[data-theme='light-steel'] .aurora-orb-3 {
+  background: radial-gradient(
+    circle,
+    rgba(160, 170, 185, 0.28) 0%,
+    transparent 65%
+  );
+}
+[data-theme='light-steel'] .aurora-orb-4 {
+  background: radial-gradient(
+    circle,
+    rgba(140, 155, 170, 0.22) 0%,
+    transparent 65%
+  );
+}
+[data-theme='light-steel'] .aurora-grid {
+  background-image:
+    linear-gradient(rgba(180,190,200,0.28) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(180,190,200,0.28) 1px, transparent 1px),
+    radial-gradient(circle, rgba(180,190,200,0.5) 1.5px, transparent 1.5px);
+  background-size: 40px 40px, 40px 40px, 40px 40px;
+  background-position: 0 0, 0 0, 20px 20px;
+}
+
+/* Pink Ombre (light bg) — opacity pasaytirish */
+[data-theme='pink-ombre'] .aurora-orb-1 { opacity: 0.55; }
+[data-theme='pink-ombre'] .aurora-orb-2 { opacity: 0.45; }
+[data-theme='pink-ombre'] .aurora-orb-3 { opacity: 0.38; }
+[data-theme='pink-ombre'] .aurora-orb-4 { opacity: 0.32; }
+[data-theme='pink-ombre'] .aurora-grid  { opacity: 0.5; }
+
+/* ================================================
+   SCROLLBAR
+   ================================================ */
+html, body { overflow: hidden; height: 100%; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-main); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent) 0%, var(--bg-secondary) 100%);
   border-radius: 100vh;
   border: 2px solid var(--bg-main);
-  transition: all 0.3s ease;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(
-    180deg,
-    var(--text-main) 0%,
-    var(--accent) 100%
-  );
+  background: linear-gradient(180deg, var(--text-main) 0%, var(--accent) 100%);
 }
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent) var(--bg-main);
-}
+* { scrollbar-width: thin; scrollbar-color: var(--accent) var(--bg-main); }

@@ -49,7 +49,7 @@ const AnimatedRoutes = () => {
           <Route path="/home"      element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/skills"    element={<Skills />} />
-          <Route path="*" element={<div className="p-10 text-center">Sahifa topilmadi</div>} />
+          <Route path="*"          element={<div className="p-10 text-center">Sahifa topilmadi</div>} />
         </Routes>
       </Motion.div>
     </AnimatePresence>
@@ -63,35 +63,24 @@ const App = () => {
         <Router>
           <TitleUpdater />
 
-          {/*
-            Yagona wrapper — bg-theme-bg shu yerda.
-            aurora-bg ICHKARIDA, lekin z-index 0.
-            app-container bg yo'q — transparent.
-          */}
-          <div
-            className="app-container min-h-screen max-h-screen overflow-hidden relative w-full"
-            style={{ background: 'var(--bg-main)', color: 'var(--text-main)' }}
-          >
-            {/* Aurora orqa fon — z-index 0, content z-index 10+ */}
-            <div className="aurora-bg" aria-hidden="true">
-              <div className="aurora-grid" />
-              <div className="aurora-orb-1" />
-              <div className="aurora-orb-2" />
-              <div className="aurora-orb-3" />
-              <div className="aurora-orb-4" />
-            </div>
+          {/* Neon Aurora orqali fon — faqat CSS, pointer-events yo'q */}
+          <div className="aurora-bg" aria-hidden="true">
+            <div className="aurora-grid" />
+            <div className="aurora-orb-1" />
+            <div className="aurora-orb-2" />
+            <div className="aurora-orb-3" />
+            <div className="aurora-orb-4" />
+          </div>
 
-            {/* Custom titlebar */}
-            <TitleBar />
+          {/* Custom titlebar — faqat Tauri da ko'rinadi */}
+          <TitleBar />
 
-            {/* Asosiy kontent — z-index 10 */}
-            <div className="relative z-10 h-full max-h-screen overflow-hidden transition-colors duration-300">
-              <Layout>
-                <main className="p-4 w-full">
-                  <AnimatedRoutes />
-                </main>
-              </Layout>
-            </div>
+          <div className="app-container min-h-screen bg-theme-bg text-theme-text transition-colors duration-300 max-h-screen overflow-hidden relative w-full">
+            <Layout>
+              <main className="p-4 z-10 relative w-full">
+                <AnimatedRoutes />
+              </main>
+            </Layout>
           </div>
         </Router>
       </LanguageProvider>
