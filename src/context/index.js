@@ -37,12 +37,7 @@ export const translations = {
       demo: "Demo",
       github: "GitHub",
       projects: {
-        ecommerce: { title: "E-Commerce Platform", desc: "React va Node.js bilan qurilgan to'liq stack internet do'kon." },
         player: { title: "Sonara Music Player", desc: "Zamonaviy musiqa playeri, youtubedagi musiqalarni ijro etish imkoniyati." },
-        weather: { title: "Weather Dashboard", desc: "Real vaqt ob-havo ma'lumotlari va interaktiv grafiklar." },
-        social: { title: "Social Media App", desc: "Foydalanuvchilar o'rtasida aloqa uchun ijtimoiy tarmoq." },
-        blog: { title: "Blog Platform", desc: "Maqolalar yozish va ulashish uchun zamonaviy blog platformasi." },
-        portfolio: { title: "Portfolio Website", desc: "Shaxsiy portfolio va ko'nikmalar namoyishi uchun sayt." }
       }
     },
     about: {
@@ -95,12 +90,7 @@ export const translations = {
       demo: "Demo",
       github: "GitHub",
       projects: {
-        ecommerce: { title: "E-Commerce Platform", desc: "A full-stack online store built with React and Node.js." },
         player: { title: "Sonara Music Player", desc: "A modern music player with the ability to stream music from YouTube." },
-        weather: { title: "Weather Dashboard", desc: "Real-time weather data and interactive charts." },
-        social: { title: "Social Media App", desc: "A social network for communication between users." },
-        blog: { title: "Blog Platform", desc: "A modern blog platform for writing and sharing articles." },
-        portfolio: { title: "Portfolio Website", desc: "A site for personal portfolio and skills demonstration." }
       }
     },
     about: {
@@ -153,12 +143,7 @@ export const translations = {
       demo: "Демо",
       github: "GitHub",
       projects: {
-        ecommerce: { title: "E-Commerce Платформа", desc: "Полнофункциональный интернет-магазин на React и Node.js." },
         player: { title: "Sonara Music Player", desc: "Заманчивый музыкальный плеер с возможностью воспроизведения музыки с YouTube." },
-        weather: { title: "Прогноз погоды", desc: "Данные о погоде в реальном времени и интерактивные графики." },
-        social: { title: "Социальная сеть", desc: "Социальная сеть для общения между пользователями." },
-        blog: { title: "Блог платформа", desc: "Современная платформа для написания и обмена статьями." },
-        portfolio: { title: "Сайт портфолио", desc: "Сайт для демонстрации личного портфолио и навыков." }
       }
     },
     about: {
