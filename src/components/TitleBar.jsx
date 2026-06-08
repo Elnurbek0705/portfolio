@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { LanguageContext } from '../context/LanguageContext';
+import Tooltip from './Tooltip';
 
 const TitleBar = () => {
   const [isMaximized, setIsMaximized] = useState(false);
@@ -200,33 +201,39 @@ const TitleBar = () => {
 
         <div id="tb-controls">
           {/* Minimize */}
-          <button className="tb-btn" onClick={minimize} title={t('titleBar.minimize')}>
-            <svg viewBox="0 0 12 12">
-              <line x1="1" y1="6" x2="11" y2="6" />
-            </svg>
-          </button>
+          <Tooltip text={t('titleBar.minimize')} position="bottom">
+            <button className="tb-btn" onClick={minimize}>
+              <svg viewBox="0 0 12 12">
+                <line x1="1" y1="6" x2="11" y2="6" />
+              </svg>
+            </button>
+          </Tooltip>
 
           {/* Maximize / Restore */}
-          <button className="tb-btn" onClick={maximize} title={isMaximized ? t('titleBar.restore') : t('titleBar.maximize')}>
-            {isMaximized ? (
-              <svg viewBox="0 0 12 12">
-                <rect x="3.5" y="1.5" width="7" height="7" rx="1" />
-                <path d="M1.5 4v5.5a1 1 0 001 1H8" />
-              </svg>
-            ) : (
-              <svg viewBox="0 0 12 12">
-                <rect x="1.5" y="1.5" width="9" height="9" rx="1.2" />
-              </svg>
-            )}
-          </button>
+          <Tooltip text={isMaximized ? t('titleBar.restore') : t('titleBar.maximize')} position="bottom">
+            <button className="tb-btn" onClick={maximize}>
+              {isMaximized ? (
+                <svg viewBox="0 0 12 12">
+                  <rect x="3.5" y="1.5" width="7" height="7" rx="1" />
+                  <path d="M1.5 4v5.5a1 1 0 001 1H8" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 12 12">
+                  <rect x="1.5" y="1.5" width="9" height="9" rx="1.2" />
+                </svg>
+              )}
+            </button>
+          </Tooltip>
 
           {/* Close */}
-          <button className="tb-btn tb-btn-close" onClick={close} title={t('titleBar.close')}>
-            <svg viewBox="0 0 12 12">
-              <line x1="1.5" y1="1.5" x2="10.5" y2="10.5" />
-              <line x1="10.5" y1="1.5" x2="1.5" y2="10.5" />
-            </svg>
-          </button>
+          <Tooltip text={t('titleBar.close')} position="bottom">
+            <button className="tb-btn tb-btn-close" onClick={close}>
+              <svg viewBox="0 0 12 12">
+                <line x1="1.5" y1="1.5" x2="10.5" y2="10.5" />
+                <line x1="10.5" y1="1.5" x2="1.5" y2="10.5" />
+              </svg>
+            </button>
+          </Tooltip>
         </div>
       </div>
     </>

@@ -1,7 +1,6 @@
 import React, { useContext, useState, useRef, useEffect } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
-import { LanguageContext } from '../context/LanguageContext';
-import { Palette, Zap, ZapOff } from 'lucide-react'; 
+import { Palette } from 'lucide-react'; 
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -14,8 +13,7 @@ const themes = [
 ];
 
 const ThemePicker = ({ mobile = false }) => {
-  const { setTheme, theme: currentTheme, isHighPerf, setIsHighPerf } = useContext(ThemeContext);
-  const { t } = useContext(LanguageContext);
+  const { setTheme, theme: currentTheme } = useContext(ThemeContext);
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef(null);
 
@@ -47,23 +45,7 @@ const ThemePicker = ({ mobile = false }) => {
 
   return (
     <div ref={containerRef} className={`relative flex ${mobile ? 'flex-row' : 'flex-col'} gap-3 items-center z-50`}>
-      {/* Performance Toggle Button */}
-      <button
-        onClick={() => setIsHighPerf(!isHighPerf)}
-        title={isHighPerf ? t('perf.high') : t('perf.low')}
-        className={`p-2 rounded-full transition-all duration-300 bg-theme-secondary border hover:shadow-lg active:scale-90 ${
-          isHighPerf ? 'border-theme-accent shadow-[0_0_10px_rgba(var(--accent),0.2)]' : 'border-theme-muted'
-        }`}
-      >
-        {isHighPerf ? (
-          <Zap className={`${mobile ? 'w-6 h-6' : 'w-8 h-8'} text-theme-accent fill-theme-accent/20`} />
-        ) : (
-          <ZapOff className={`${mobile ? 'w-6 h-6' : 'w-8 h-8'} text-theme-muted`} />
-        )}
-      </button>
 
-      {/* Divider line between Performance and Theme Palette */}
-      <div className={`${mobile ? 'w-px h-4' : 'h-px w-4'} bg-theme-accent/20 rounded-full`} />
 
       <button
         onClick={() => setIsOpen(!isOpen)}
