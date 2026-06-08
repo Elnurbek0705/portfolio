@@ -59,12 +59,12 @@ const Home = () => {
   }, [charIdx, deleting, roleIdx, roles]);
 
   return (
-    <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center py-8 px-4">
+    <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center py-4 px-4">
       <Motion.div
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.4 }}
-        className="w-full max-w-2xl bg-theme-secondary/60 backdrop-blur-sm rounded-3xl p-10 md:p-14 text-center border border-theme-accent/15 shadow-2xl"
+        className="w-full max-w-2xl bg-theme-secondary/60 backdrop-blur-sm rounded-3xl p-6 md:p-10 text-center border border-theme-accent/15 shadow-2xl"
       >
         {/* Avatar */}
         <Motion.div

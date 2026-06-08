@@ -51,7 +51,7 @@ export const translations = {
       desc: "Ushbu portfolio qanday yaratilgani va uning texnik imkoniyatlari haqida batafsil ma'lumot.",
       perf: { title: "Unumdorlik (Performance Toggle)", desc: "Zaif qurilmalar uchun aurora effektlari va og'ir animatsiyalarni o'chirish imkoniyati qo'shilgan." },
       tech: { title: "Texnologiyalar", desc: "Loyiha React 19, Vite, Tailwind CSS 4 va Framer Motion kabi eng zamonaviy vositalar yordamida qurilgan." },
-      tauri: { title: "Desktop Versiya", desc: "Tauri frameworki orqali veb-ilova Windows/macOS uchun portable desktop dastur ko'rinishiga keltirilgan (fayl hajmi < 5MB)." },
+      tauri: { title: "Desktop Versiya", desc: "Tauri frameworki orqali veb-ilova Windows/macOS uchun portable desktop dastur ko'rinishiga keltirilgan (fayl hajmi < 15MB).", download: "Dasturni yuklab olish" },
       i18n: { title: "Ko'p tilli tizim", desc: "React Context va LocalStorage integratsiyasi orqali matnlar dinamik ravishda UZ, EN va RU tillariga bir zumda o'zgaradi." },
       theme: { title: "Mavzular (Theming)", desc: "CSS Variables va Tailwind integratsiyasi orqali foydalanuvchi interfeys ranglarini real vaqtda o'zgartirishi mumkin." },
       responsive: { title: "Moslashuvchanlik", desc: "Mobile-first yondashuv asosida yaratilgan interfeys har qanday o'lchamdagi ekranda mukammal ko'rinadi." }
@@ -109,7 +109,7 @@ export const translations = {
       desc: "Detailed information about how this portfolio was built and its technical features.",
       perf: { title: "Performance Control", desc: "The Performance Toggle allows disabling heavy visual effects (Aurora, Blur) for better flow on low-end devices." },
       tech: { title: "Tech Stack", desc: "Built using modern tools like React 19, Vite, Tailwind CSS 4, and Framer Motion for maximum efficiency." },
-      tauri: { title: "Desktop Version", desc: "Using the Tauri framework, the web app is packaged as a portable desktop application for Windows/macOS (size < 5MB)." },
+      tauri: { title: "Desktop Version", desc: "Using the Tauri framework, the web app is packaged as a portable desktop application for Windows/macOS (size < 15MB).", download: "Download App" },
       i18n: { title: "Multi-language System", desc: "Instant translation between UZ, EN, and RU using custom React Context and LocalStorage." },
       theme: { title: "Theme Engine", desc: "Dynamic color palettes managed via CSS Variables and Tailwind for real-time UI customization." },
       responsive: { title: "Responsiveness", desc: "A mobile-first design ensures a seamless experience across all screen sizes." }
@@ -167,7 +167,7 @@ export const translations = {
       desc: "Подробная информация о том, как было создано это портфолио и его технических возможностях.",
       perf: { title: "Производительность", desc: "Переключатель производительности позволяет отключать тяжелые визуальные эффекты для плавной работы на слабых устройствах." },
       tech: { title: "Стек технологий", desc: "Проект построен с использованием современных инструментов, таких как React 19, Vite, Tailwind CSS 4 и Framer Motion." },
-      tauri: { title: "Десктопная версия", desc: "С помощью Tauri веб-приложение упаковано в портативное десктопное приложение для Windows/macOS (размер < 5 МБ)." },
+      tauri: { title: "Десктопная версия", desc: "С помощью Tauri веб-приложение упаковано в портативное десктопное приложение для Windows/macOS (размер < 15 МБ).", download: "Скачать приложение" },
       i18n: { title: "Многоязычность", desc: "Мгновенное переключение между UZ, EN и RU с использованием React Context и LocalStorage." },
       theme: { title: "Система тем", desc: "Динамические цветовые палитры через CSS-переменные для настройки интерфейса в реальном времени." },
       responsive: { title: "Адаптивность", desc: "Интерфейс, созданный на основе Mobile-first подхода, отлично выглядит на любых экранах." }

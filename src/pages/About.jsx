@@ -7,7 +7,8 @@ import {
   Languages, 
   Palette, 
   Smartphone,
-  Info
+  Info,
+  Download
 } from 'lucide-react';
 import { LanguageContext } from '../context/LanguageContext';
 
@@ -84,6 +85,17 @@ const About = () => {
               <p className="text-theme-muted leading-relaxed text-sm md:text-base">
                 {t(`about.${feature.id}.desc`)}
               </p>
+
+              {feature.id === 'tauri' && (
+                <a 
+                  href="/app.exe" 
+                  download 
+                  className={`mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-emerald-500/20 bg-emerald-500/10 ${feature.color} hover:bg-emerald-500 hover:text-white transition-all duration-300 text-sm font-semibold group/btn`}
+                >
+                  <Download className="w-4 h-4 transition-transform group-hover/btn:translate-y-0.5" />
+                  {t('about.tauri.download')}
+                </a>
+              )}
             </div>
           </Motion.div>
         ))}
