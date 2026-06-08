@@ -7,6 +7,7 @@ import Layout from "./layout/Layout";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import Skills from "./pages/Skills";
+import About from "./pages/About";
 import TitleBar from "./components/TitleBar";
 
 const pageVariants = {
@@ -20,6 +21,7 @@ const titleMap = {
   "/home":      "home",
   "/portfolio": "portfolio",
   "/skills":    "skills",
+  "/about":     "about",
 };
 
 const TitleUpdater = () => {
@@ -49,6 +51,7 @@ const AnimatedRoutes = () => {
           <Route path="/home"      element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/skills"    element={<Skills />} />
+          <Route path="/about"     element={<About />} />
           <Route path="*" element={<div className="p-10 text-center">Sahifa topilmadi</div>} />
         </Routes>
       </Motion.div>

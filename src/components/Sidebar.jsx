@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { Home, Briefcase, Code2 } from "lucide-react";
+import { Home, Briefcase, Code2, Info } from "lucide-react";
 import { motion as Motion } from "framer-motion";
 import ThemePicker from "./ThemeSwitcher";
 import PerformanceToggle from "./PerformanceToggle";
@@ -16,6 +16,7 @@ const Sidebar = ({ mobile = false }) => {
     { path: "/", icon: <Home className="w-6 h-6" />, label: t('nav.home') },
     { path: "/portfolio", icon: <Briefcase className="w-6 h-6" />, label: t('nav.portfolio') },
     { path: "/skills", icon: <Code2 className="w-6 h-6" />, label: t('nav.skills') },
+    { path: "/about", icon: <Info className="w-6 h-6" />, label: t('nav.about') },
   ];
 
   const navItems = menuItems.map((item) => {

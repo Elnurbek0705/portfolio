@@ -4,8 +4,9 @@ export const translations = {
       home: "Asosiy - Portfolio",
       portfolio: "Portfolio - Ishlar",
       skills: "Ko'nikmalar - Men",
+      about: "Loyiha haqida - Info",
     },
-    nav: { home: "Asosiy", portfolio: "Portfolio", skills: "Ko'nikmalar" },
+    nav: { home: "Asosiy", portfolio: "Portfolio", skills: "Ko'nikmalar", about: "Haqida" },
     titleBar: {
       minimize: "Oynani yig‘ish",
       maximize: "To‘liq ekranga yoyish",
@@ -43,6 +44,17 @@ export const translations = {
         blog: { title: "Blog Platform", desc: "Maqolalar yozish va ulashish uchun zamonaviy blog platformasi." },
         portfolio: { title: "Portfolio Website", desc: "Shaxsiy portfolio va ko'nikmalar namoyishi uchun sayt." }
       }
+    },
+    about: {
+      title: "Loyiha",
+      subtitle: "Haqida",
+      desc: "Ushbu portfolio qanday yaratilgani va uning texnik imkoniyatlari haqida batafsil ma'lumot.",
+      perf: { title: "Unumdorlik (Performance Toggle)", desc: "Zaif qurilmalar uchun aurora effektlari va og'ir animatsiyalarni o'chirish imkoniyati qo'shilgan." },
+      tech: { title: "Texnologiyalar", desc: "Loyiha React 19, Vite, Tailwind CSS 4 va Framer Motion kabi eng zamonaviy vositalar yordamida qurilgan." },
+      tauri: { title: "Desktop Versiya", desc: "Tauri frameworki orqali veb-ilova Windows/macOS uchun portable desktop dastur ko'rinishiga keltirilgan (fayl hajmi < 5MB)." },
+      i18n: { title: "Ko'p tilli tizim", desc: "React Context va LocalStorage integratsiyasi orqali matnlar dinamik ravishda UZ, EN va RU tillariga bir zumda o'zgaradi." },
+      theme: { title: "Mavzular (Theming)", desc: "CSS Variables va Tailwind integratsiyasi orqali foydalanuvchi interfeys ranglarini real vaqtda o'zgartirishi mumkin." },
+      responsive: { title: "Moslashuvchanlik", desc: "Mobile-first yondashuv asosida yaratilgan interfeys har qanday o'lchamdagi ekranda mukammal ko'rinadi." }
     }
   },
   en: {
@@ -50,8 +62,9 @@ export const translations = {
       home: "Home - Portfolio",
       portfolio: "Portfolio - Works",
       skills: "Skills - Me",
+      about: "About Project - Info",
     },
-    nav: { home: "Home", portfolio: "Portfolio", skills: "Skills" },
+    nav: { home: "Home", portfolio: "Portfolio", skills: "Skills", about: "About" },
     titleBar: {
       minimize: "Minimize",
       maximize: "Maximize",
@@ -89,6 +102,17 @@ export const translations = {
         blog: { title: "Blog Platform", desc: "A modern blog platform for writing and sharing articles." },
         portfolio: { title: "Portfolio Website", desc: "A site for personal portfolio and skills demonstration." }
       }
+    },
+    about: {
+      title: "About",
+      subtitle: "Project",
+      desc: "Detailed information about how this portfolio was built and its technical features.",
+      perf: { title: "Performance Control", desc: "The Performance Toggle allows disabling heavy visual effects (Aurora, Blur) for better flow on low-end devices." },
+      tech: { title: "Tech Stack", desc: "Built using modern tools like React 19, Vite, Tailwind CSS 4, and Framer Motion for maximum efficiency." },
+      tauri: { title: "Desktop Version", desc: "Using the Tauri framework, the web app is packaged as a portable desktop application for Windows/macOS (size < 5MB)." },
+      i18n: { title: "Multi-language System", desc: "Instant translation between UZ, EN, and RU using custom React Context and LocalStorage." },
+      theme: { title: "Theme Engine", desc: "Dynamic color palettes managed via CSS Variables and Tailwind for real-time UI customization." },
+      responsive: { title: "Responsiveness", desc: "A mobile-first design ensures a seamless experience across all screen sizes." }
     }
   },
   ru: {
@@ -96,8 +120,9 @@ export const translations = {
       home: "Главная - Portfolio",
       portfolio: "Портфолио - Работы",
       skills: "Навыки - Я",
+      about: "О проекте - Инфо",
     },
-    nav: { home: "Главная", portfolio: "Портфолио", skills: "Навыки" },
+    nav: { home: "Главная", portfolio: "Портфолио", skills: "Навыки", about: "О проекте" },
     titleBar: {
       minimize: "Свернуть",
       maximize: "Развернуть",
@@ -135,6 +160,17 @@ export const translations = {
         blog: { title: "Блог платформа", desc: "Современная платформа для написания и обмена статьями." },
         portfolio: { title: "Сайт портфолио", desc: "Сайт для демонстрации личного портфолио и навыков." }
       }
+    },
+    about: {
+      title: "О",
+      subtitle: "Проекте",
+      desc: "Подробная информация о том, как было создано это портфолио и его технических возможностях.",
+      perf: { title: "Производительность", desc: "Переключатель производительности позволяет отключать тяжелые визуальные эффекты для плавной работы на слабых устройствах." },
+      tech: { title: "Стек технологий", desc: "Проект построен с использованием современных инструментов, таких как React 19, Vite, Tailwind CSS 4 и Framer Motion." },
+      tauri: { title: "Десктопная версия", desc: "С помощью Tauri веб-приложение упаковано в портативное десктопное приложение для Windows/macOS (размер < 5 МБ)." },
+      i18n: { title: "Многоязычность", desc: "Мгновенное переключение между UZ, EN и RU с использованием React Context и LocalStorage." },
+      theme: { title: "Система тем", desc: "Динамические цветовые палитры через CSS-переменные для настройки интерфейса в реальном времени." },
+      responsive: { title: "Адаптивность", desc: "Интерфейс, созданный на основе Mobile-first подхода, отлично выглядит на любых экранах." }
     }
   }
 };

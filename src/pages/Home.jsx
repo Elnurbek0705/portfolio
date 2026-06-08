@@ -3,14 +3,31 @@ import { motion as Motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../context/LanguageContext";
+import { ThemeContext } from "../context/ThemeContext";
+
+// Har bir theme uchun mos avatar rasmlarni import qilish
+import lightSteelAvatar from "../assets/avatars/light-steel-avatar.png";
+import vividNightfallAvatar from "../assets/avatars/vivid-nightfall-avatar.png";
+import purpleCascadeAvatar from "../assets/avatars/purple-cascade-avatar.png";
+import freshGreensAvatar from "../assets/avatars/fresh-greens-avatar.png";
+import pinkOmbreAvatar from "../assets/avatars/pink-ombre-avatar.png";
 
 const Home = () => {
   const { t } = useContext(LanguageContext);
+  const { theme } = useContext(ThemeContext);
   const roles = t('home.roles');
   const [text, setText] = useState("");
   const [roleIdx, setRoleIdx] = useState(0);
   const [charIdx, setCharIdx] = useState(0);
   const [deleting, setDeleting] = useState(false);
+
+  const avatarMap = {
+    'light-steel': lightSteelAvatar,
+    'vivid-nightfall': vividNightfallAvatar,
+    'purple-cascade': purpleCascadeAvatar,
+    'fresh-greens': freshGreensAvatar,
+    'pink-ombre': pinkOmbreAvatar,
+  };
 
   useEffect(() => {
     if (!roles || !roles[roleIdx]) return;
@@ -57,14 +74,12 @@ const Home = () => {
           className="flex justify-center mb-8"
         >
           <div className="relative">
-            <div className="w-28 h-28 md:w-32 md:h-32 rounded-full bg-linear-to-br from-theme-accent/30 to-theme-secondary border-2 border-theme-accent/40 flex items-center justify-center overflow-hidden shadow-[0_0_32px_rgba(0,0,0,0.4)]">
-              <svg
-                className="w-16 h-16 text-theme-accent/50"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
-              </svg>
+            <div className="w-28 h-28 md:w-64 md:h-64 rounded-full bg-linear-to-br from-theme-accent/30 to-theme-secondary border-2 border-theme-accent/40 flex items-center justify-center overflow-hidden shadow-[0_0_32px_rgba(0,0,0,0.4)]">
+              <img 
+                src={avatarMap[theme] || lightSteelAvatar} 
+                alt="Avatar" 
+                className="w-full h-full object-cover"
+              />
             </div>
             <span className="absolute bottom-1 right-1 w-4 h-4 bg-emerald-400 rounded-full border-2 border-theme-secondary shadow" />
           </div>
