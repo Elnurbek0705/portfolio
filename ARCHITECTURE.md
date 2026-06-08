@@ -32,7 +32,8 @@ Dasturda xalqaro standartlarga mos, lekin soddalashtirilgan o'ziga xos i18n tizi
 
 ### B. Mavzular Boshqaruvi (Theme Management)
 - **CSS Variables:** Ranglar Tailwind bilan integratsiya qilingan CSS o'zgaruvchilari orqali boshqariladi.
-- **ThemeContext:** Foydalanuvchi tanlagan mavzuni (`light-steel`, `fresh-greens` va h.k.) butun ilovaga tatbiq etadi.
+- **ThemeContext:** Foydalanuvchi tanlagan mavzuni butun ilovaga tatbiq etadi.
+- **Mavjud Mavzular:** Loyihada 5 xil ranglar palitrasidan foydalanilgan: `Light Steel`, `Vivid Nightfall`, `Purple Cascade`, `Fresh Greens` va `Pink Ombre`.
 - **Dinamik Switcher:** Foydalanuvchiga real vaqt rejimida ranglar palitrasini o'zgartirish imkonini beradi.
 
 ### C. Navigatsiya va Sidebar
@@ -62,6 +63,12 @@ Dasturda xalqaro standartlarga mos, lekin soddalashtirilgan o'ziga xos i18n tizi
 - **Responsive:** Barcha o'lchamlardagi ekranlar uchun moslashtirilgan.
 - **Interaktivlik:** Har bir tugma va karta uchun Framer Motion orqali "Haptic-like" (teginishga sezgir) animatsiyalar qo'shilgan.
 - **Glassmorphism:** `backdrop-blur` va yarim shaffof ranglar orqali zamonaviy dizayn uslubi qo'llanilgan.
+
+## 7. Optimallashtirish va Build
+
+- **React 19:** Eng so'nggi versiya imkoniyatlaridan foydalangan holda renderlash optimallashtirilgan.
+- **Vite HMR:** Dasturlash jarayonida tezkor "Hot Module Replacement" ta'minlangan.
+- **Tailwind JIT:** Faqat ishlatilgan CSS klasslari build tarkibiga kirishi orqali fayl hajmi minimallashtirilgan.
 
 ---
 *Tuzuvchi: Elnurbek*
