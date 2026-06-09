@@ -1,6 +1,6 @@
 import React, { useContext, useState, useRef, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { Home, Briefcase, Code2, Info, Settings } from "lucide-react";
+import { Home, Briefcase, Code2, Info, Settings, Menu, X, Zap, ZapOff, Palette, Languages } from "lucide-react";
 import { motion as Motion, AnimatePresence } from "framer-motion";
 import ThemePicker from "./ThemeSwitcher";
 import PerformanceToggle from "./PerformanceToggle";
@@ -8,7 +8,6 @@ import LanguagePicker from "./LanguagePicker";
 import Tooltip from "./Tooltip";
 import { LanguageContext } from "../context/LanguageContext";
 import { ThemeContext } from "../context/ThemeContext";
-import { Zap, ZapOff, Palette, Languages } from "lucide-react";
 
 /* ── Mobile uchun alohida Settings panel ── */
 const MobileSettingsPanel = () => {
@@ -158,6 +157,7 @@ const MobileSettingsPanel = () => {
 const Sidebar = ({ mobile = false }) => {
   const location = useLocation();
   const { t } = useContext(LanguageContext);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const menuItems = [
     { path: "/",          icon: <Home      className="w-6 h-6" />, label: t("nav.home") },
@@ -201,15 +201,48 @@ const Sidebar = ({ mobile = false }) => {
   /* ── MOBILE ── */
   if (mobile) {
     return (
-      <div className="flex flex-row items-center gap-0.5 bg-theme-secondary/85 backdrop-blur-md border border-theme-accent/20 rounded-full px-1.5 py-1 shadow-xl w-fit mx-auto">
-        {/* Nav links */}
-        <nav className="flex flex-row gap-0.5 relative">{navItems}</nav>
+      <div className="flex items-center gap-2">
+        <AnimatePresence>
+          {isExpanded && (
+            <Motion.div
+              initial={{ opacity: 0, x: 50, scale: 0.8 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              exit={{ opacity: 0, x: 50, scale: 0.8 }}
+              className="flex flex-row items-center gap-0.5 bg-theme-secondary/95 backdrop-blur-xl border border-theme-accent/30 rounded-full px-1.5 py-1 shadow-2xl"
+            >
+              {/* Nav links */}
+              <nav className="flex flex-row gap-0.5 relative">{navItems}</nav>
 
-        {/* Ajratuvchi chiziq */}
-        <div className="w-px h-6 bg-theme-accent/20 mx-1" />
+              {/* Ajratuvchi chiziq */}
+              <div className="w-px h-6 bg-theme-accent/20 mx-1" />
 
-        {/* Birlashgan Settings tugmasi */}
-        <MobileSettingsPanel />
+              {/* Birlashgan Settings tugmasi */}
+              <MobileSettingsPanel />
+            </Motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Toggle Button */}
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className={`p-4 rounded-full transition-all duration-500 shadow-2xl active:scale-90 flex items-center justify-center z-50 ${
+            isExpanded 
+              ? "bg-theme-secondary border border-theme-accent/30 text-theme-accent" 
+              : "bg-theme-accent text-theme-bg animate-[menu-button-pulse_2s_infinite]"
+          }`}
+        >
+          <AnimatePresence mode="wait">
+            <Motion.div
+              key={isExpanded ? "close" : "menu"}
+              initial={{ rotate: -90, opacity: 0, scale: 0.5 }}
+              animate={{ rotate: 0, opacity: 1, scale: 1 }}
+              exit={{ rotate: 90, opacity: 0, scale: 0.5 }}
+              transition={{ duration: 0.3, ease: "backOut" }}
+            >
+              {isExpanded ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+            </Motion.div>
+          </AnimatePresence>
+        </button>
       </div>
     );
   }

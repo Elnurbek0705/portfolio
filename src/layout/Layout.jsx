@@ -12,17 +12,20 @@ const Layout = ({ children }) => {
         <Sidebar />
       </aside>
 
-      {/* Asosiy kontent — faqat shu joy scroll qiladi */}
-      <main className="flex-1 h-full overflow-y-auto overflow-x-hidden pb-24 md:pb-0">
+      {/* Asosiy kontent — pb-24 ni kamaytiramiz, chunki endi to'liq bottom bar yo'q */}
+      <main className="flex-1 h-full overflow-y-auto overflow-x-hidden pb-8 md:pb-0">
         {children}
       </main>
 
       {/* Mobile: pastki nav */}
-      <nav className="md:hidden fixed bottom-0 pb-2 left-0 right-0 z-50 flex justify-center bg-linear-to-t from-theme-bg/90 to-transparent backdrop-blur-[1px]">
-        <Sidebar mobile />
+      <nav className="md:hidden fixed bottom-6 right-6 z-50 flex justify-end items-center pointer-events-none">
+        <div className="pointer-events-auto">
+          <Sidebar mobile />
+        </div>
       </nav>
     </div>
   );
 };
 
 export default Layout;
+

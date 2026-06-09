@@ -104,6 +104,12 @@ button { cursor: pointer; }
   }
 }
 
+@keyframes menu-button-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 40%, transparent); }
+  70% { box-shadow: 0 0 0 15px color-mix(in srgb, var(--accent) 0%, transparent); }
+  100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 0%, transparent); }
+}
+
 /* aurora-bg */
 .aurora-bg {
   position: absolute;
