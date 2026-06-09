@@ -57,13 +57,13 @@ const Portfolio = () => {
             whileHover={{ y: -5, transition: { duration: 0.2 } }}
             className="bg-theme-secondary/70 border border-theme-accent/10 rounded-2xl overflow-hidden shadow-lg hover:border-theme-accent/30 hover:shadow-2xl transition-shadow"
           >
-            {/* Karta banner */}
+            {/* card banner */}
             <div className={`h-40 bg-linear-to-br ${project.gradient} flex items-center justify-center border-b border-theme-accent/10`}>
               <span className="text-6xl drop-shadow-lg">{project.emoji}</span>
             </div>
 
-            {/* Karta body */}
-            <div className="p-5">
+            {/* card body */}
+            <div className="p-5 backdrop-blur-md">
               <h3 className="text-theme-text font-semibold text-lg mb-1.5">
                 {t(`portfolio.projects.${project.id}.title`)}
               </h3>
