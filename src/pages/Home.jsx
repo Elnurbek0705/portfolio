@@ -83,10 +83,7 @@ const Home = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-
-            {/* 3. Yashil nuqta (Status Dot) */}
-            {/* Katta ekranda rasm kattalashgani uchun nuqtani ham md:w-6 md:h-6 qildik */}
-            <span className="absolute bottom-1 right-1 w-4 h-4 md:bottom-4 md:right-4 md:w-6 md:h-6 bg-emerald-400 rounded-full border-2 border-theme-secondary shadow-md z-10" />
+            <span className="absolute bottom-5 right-5 w-4 h-4 md:bottom-4 md:right-4 md:w-6 md:h-6 bg-emerald-400 rounded-full border-2 border-theme-secondary shadow-md z-10" />
           </div>
         </Motion.div>
 
