@@ -5,8 +5,9 @@ export const translations = {
       portfolio: "Portfolio - Ishlar",
       skills: "Ko'nikmalar - Men",
       about: "Loyiha haqida - Info",
+      settings: "Sozlamalar"
     },
-    nav: { home: "Asosiy", portfolio: "Portfolio", skills: "Ko'nikmalar", about: "Haqida" },
+    nav: { home: "Asosiy", portfolio: "Portfolio", skills: "Ko'nikmalar", about: "Haqida", settings: "Sozlamalar" },
     titleBar: {
       minimize: "Oynani yig‘ish",
       maximize: "To‘liq ekranga yoyish",
@@ -58,8 +59,9 @@ export const translations = {
       portfolio: "Portfolio - Works",
       skills: "Skills - Me",
       about: "About Project - Info",
+      settings: "Settings"
     },
-    nav: { home: "Home", portfolio: "Portfolio", skills: "Skills", about: "About" },
+    nav: { home: "Home", portfolio: "Portfolio", skills: "Skills", about: "About", settings: "Settings" },
     titleBar: {
       minimize: "Minimize",
       maximize: "Maximize",
@@ -111,8 +113,9 @@ export const translations = {
       portfolio: "Портфолио - Работы",
       skills: "Навыки - Я",
       about: "О проекте - Инфо",
+      settings: "Настройки"
     },
-    nav: { home: "Главная", portfolio: "Портфолио", skills: "Навыки", about: "О проекте" },
+    nav: { home: "Главная", portfolio: "Портфолио", skills: "Навыки", about: "О проекте", settings: "Настройки" },
     titleBar: {
       minimize: "Свернуть",
       maximize: "Развернуть",
