@@ -132,7 +132,7 @@ const Home = () => {
           >
             {t("home.viewWork")} <ArrowRight className="w-4 h-4" />
           </Link>
-          <a
+          <a target="_blank"
             href="/cv.pdf"
             className="flex items-center gap-2 px-7 py-3 border border-theme-accent/50 text-theme-text font-semibold rounded-full hover:bg-theme-accent/10 active:scale-95 transition-all"
           >
