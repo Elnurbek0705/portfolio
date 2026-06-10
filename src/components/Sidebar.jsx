@@ -214,7 +214,7 @@ const Sidebar = ({ mobile = false }) => {
               <nav className="flex flex-row gap-0.5 relative">{navItems}</nav>
 
               {/* Ajratuvchi chiziq */}
-              <div className="w-px h-6 bg-theme-accent/20 mx-1" />
+              <div className="h-6 bg-theme-accent/20 mx-1" />
 
               {/* Birlashgan Settings tugmasi */}
               <MobileSettingsPanel />
@@ -239,7 +239,7 @@ const Sidebar = ({ mobile = false }) => {
               exit={{ rotate: 90, opacity: 0, scale: 0.5 }}
               transition={{ duration: 0.3, ease: "backOut" }}
             >
-              {isExpanded ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+              {isExpanded ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Motion.div>
           </AnimatePresence>
         </button>

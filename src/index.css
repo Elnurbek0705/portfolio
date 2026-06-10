@@ -266,16 +266,19 @@ button { cursor: pointer; }
 /* ================================================
    SCROLLBAR
    ================================================ */
-html, body { overflow: hidden; height: 100%; }
+html, body { overflow: hidden; height: 100%; } /* Bu qatorni o'zgartirmaymiz, chunki u umumiy xususiyat */
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
+@media (max-width: 767px) { /* Mobil qurilmalar uchun */
+  ::-webkit-scrollbar { width: 7px }
+}
 ::-webkit-scrollbar-track { background: var(--bg-main); }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--accent) 0%, var(--bg-secondary) 100%);
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--accent) 100%);
   border-radius: 100vh;
   border: 2px solid var(--bg-main);
 }
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, var(--text-main) 0%, var(--accent) 100%);
 }
-* { scrollbar-width: thin; scrollbar-color: var(--accent) var(--bg-main); }
+/* * { scrollbar-width: thin; scrollbar-color: var(--accent) var(--bg-main); } */

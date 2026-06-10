@@ -1,4 +1,3 @@
-// layout/Layout.jsx
 import React from "react";
 import Sidebar from "../components/Sidebar";
 
@@ -18,7 +17,7 @@ const Layout = ({ children }) => {
       </main>
 
       {/* Mobile: pastki nav */}
-      <nav className="md:hidden fixed bottom-6 right-6 z-50 flex justify-end items-center pointer-events-none">
+      <nav className="md:hidden fixed bottom-2 right-4 z-50 flex justify-end items-center pointer-events-none">
         <div className="pointer-events-auto">
           <Sidebar mobile />
         </div>
